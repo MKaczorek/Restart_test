@@ -21,7 +21,7 @@ def karras(
     gaussian: bool = False,
 ):
     # Set initial noise
-    x = sigmas[0] * noises  # [batch_size, num-sources, sample-length]
+    x = sigmas[0] * noises  # [num-sources, sample-length]
 
     for i in tqdm(range(len(sigmas) - 1), disable=not use_tqdm):
         sigma, sigma_next = sigmas[i], sigmas[i + 1]
